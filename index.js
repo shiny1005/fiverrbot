@@ -1,29 +1,11 @@
-require('dotenv').config();
 const { Client, GatewayIntentBits } = require('discord.js');
+const config = require('./config.json');
 
-// Validate required environment variables
-if (!process.env.DISCORD_TOKEN) {
-  console.error('DISCORD_TOKEN not found in .env file. Please create a .env file with your Discord bot token.');
+// Validate required configuration
+if (!config.token) {
+  console.error('Bot token not found in config.json. Please add a "token" field with your Discord bot token.');
   process.exit(1);
 }
-
-// Parse configuration from environment variables
-const config = {
-  token: process.env.DISCORD_TOKEN,
-  lookingForDevChannelId: process.env.LOOKING_FOR_DEV_CHANNEL_ID,
-  selfPromotion: {
-    enabled: process.env.SELF_PROMOTION_ENABLED === 'true',
-    keywords: JSON.parse(process.env.SELF_PROMOTION_KEYWORDS || '[]'),
-  },
-  lookingForDev: {
-    enabled: process.env.LOOKING_FOR_DEV_ENABLED === 'true',
-    requiredKeywords: JSON.parse(process.env.LOOKING_FOR_DEV_REQUIRED_KEYWORDS || '[]'),
-    forbiddenKeywords: JSON.parse(process.env.LOOKING_FOR_DEV_FORBIDDEN_KEYWORDS || '[]'),
-    requirePriceOrPercentage: process.env.LOOKING_FOR_DEV_REQUIRE_PRICE_OR_PERCENTAGE !== 'false',
-    pricePercentageMessage: process.env.LOOKING_FOR_DEV_PRICE_PERCENTAGE_MESSAGE,
-    ruleMessage: process.env.LOOKING_FOR_DEV_RULE_MESSAGE,
-  },
-};
 
 const client = new Client({
   intents: [
