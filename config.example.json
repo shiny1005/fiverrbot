@@ -1,0 +1,30 @@
+{
+  "token": "YOUR_DISCORD_BOT_TOKEN",
+  "lookingForDevChannelId": "CHANNEL_ID_FOR_LOOKING_FOR_DEV",
+  "selfPromotion": {
+    "enabled": true,
+    "keywords": [
+      "hire me",
+      "dm me for",
+      "message me for",
+      "check my",
+      "my fiverr",
+      "my portfolio",
+      "my gig",
+      "fiverr.com",
+      "upwork.com",
+      "discord.gg/",
+      "add me on",
+      "contact me at",
+      "ping me for"
+    ]
+  },
+  "lookingForDev": {
+    "enabled": true,
+    "requiredKeywords": [],
+    "forbiddenKeywords": [],
+    "requirePriceOrPercentage": true,
+    "pricePercentageMessage": "Your message in the #looking-for-dev channel was deleted because it didn't include a price or percentage.",
+    "ruleMessage": "Your message in the #looking-for-dev channel was deleted because it didn't follow the correct format:\n\n```\n[Project Type]:\n[Compensation]:\n[Current Project State]:\n[Programming Language]:\n[Other Info]:\n```"
+  }
+}

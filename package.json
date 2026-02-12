@@ -1,0 +1,22 @@
+{
+  "name": "fiverrbot",
+  "version": "1.0.0",
+  "description": "Discord bot: self-promotion moderation and Looking for Dev channel rules",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node index.js",
+    "hide-open-app": "node scripts/hide-open-app.js"
+  },
+  "keywords": [
+    "discord",
+    "bot",
+    "moderation"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^14.14.1",
+    "dotenv": "^17.2.3"
+  }
+}
